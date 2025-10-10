@@ -12,8 +12,9 @@ int main(int argc, char **argv) {
      * it is much more convenient than std::cout and printf
      * More info at https://fmt.dev/latest/api.html
      */
+    fmt::println("Teil 0");
     fmt::print("Hello, {} in version {}!\n", tea::PROJECT_NAME, tea::PROJECT_VER);
-/*Teil 0*/
+
     for (int i=0; i< argc; i++) {
         fmt::println("argc: {}, argument {} (Adresse: {})", i, argv[i], fmt::ptr(argv[i]));
     }
@@ -27,7 +28,7 @@ int main(int argc, char **argv) {
     int bar = 4711;
     ptr = &bar;
     *ptr = foo;     /*was steht in bar?*/
-    fmt::print("bar = {}", bar);
+    fmt::print("bar = {}\n", bar);
 
     fmt::println("Teil 2");
     double* d = new double(3.1415);   // Speicher reservieren UND initialisieren
