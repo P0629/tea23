@@ -67,7 +67,8 @@ Warum es wichtig ist, zwischen Stack und Heap zu unterscheiden.
 Welche Rolle Zeiger in diesem Zusammenhang spielen.
 Erstellen Sie eine Skizze des gesamten Arbeitsspeicher.*/
 
-/*Fazit: Speichersegmente in C++
+/*
+Fazit: Speichersegmente in C++
 
 In C++ werden Daten je nach Art in verschiedene Speicherbereiche gelegt:
 
@@ -83,9 +84,15 @@ Dynamisch erzeugte Variablen (mittels new) liegen im Heap, der manuell mit delet
 
 Funktionen liegen im Code-Segment, wo der ausführbare Programmcode gespeichert ist.
 
-Wichtig:
+---------------
+Wichtig !!!
+---------------
+
 Stack und Heap unterscheiden sich in Lebensdauer und Verwaltung.
 Zeiger sind notwendig, um auf Speicher im Heap zuzugreifen und machen sichtbar, wo Daten tatsächlich liegen.
+-------------------------------------------------------------------------------------------------------------
+
+Skizze Arbeitsspeicher:
 
 +------------------------+
 | Code-Segment (Text)    |  → Funktionen, ausführbarer Code
@@ -100,4 +107,6 @@ Zeiger sind notwendig, um auf Speicher im Heap zuzugreifen und machen sichtbar, 
 +------------------------+
 | Stack                  |  → lokale Variablen, Funktionsaufrufe
 |         ↓ wächst nach unten
-+------------------------+*/
++------------------------+
+
+*/
