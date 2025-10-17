@@ -3,6 +3,11 @@
 
 #include "config.h"
 
+/*Globale Variablen sind außerhalb einer Funktion*/
+int globalVar = 1;
+char name[] = "Peter";
+int alter = 25;
+
 int main(int argc, char **argv) {
 
     /**
@@ -11,7 +16,9 @@ int main(int argc, char **argv) {
      * More info at https://fmt.dev/latest/api.html
      */
     fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
-
+    fmt::println("Teil 1");
+    fmt::println("Wert: {}, Adresse: {}", globalVar, fmt::ptr(&globalVar));
+    fmt::print("Name: {}, Alter: {}\n Wert: {}, Adresse: {}", name, alter, fmt::ptr(&name), fmt::ptr(&alter));
     /* INSERT YOUR CODE HERE */
 
     return 0; /* exit gracefully*/
