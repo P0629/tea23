@@ -10,6 +10,9 @@ int alter = 25;
 const int globalVar2 = 1;
 static int globalVar3 =1;
 
+void foo()      /*Teil 4*/
+    { fmt::print("Hello from foo!\n"); }
+
 int main(int argc, char **argv) {
 
     /**
@@ -48,6 +51,10 @@ Lokale Variablen liegen auf dem Stack und werden automatisch beim Funktionsaufru
 Dynamisch erzeugte Variablen liegen auf dem Heap und müssen mit delete manuell freigegeben werden.
 static beschränkt die Sichtbarkeit, const macht den Wert unveränderlich.*/
     
+    /*Teil 4*/
+    fmt::println("Teil 4");
+    foo();
+    fmt::print("Adresse von foo: {}\\n", fmt::ptr(&foo));
     /* INSERT YOUR CODE HERE */
 
     return 0; /* exit gracefully*/
