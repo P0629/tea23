@@ -59,3 +59,45 @@ static beschränkt die Sichtbarkeit, const macht den Wert unveränderlich.*/
 
     return 0; /* exit gracefully*/
 } 
+
+/*Zusatz*/
+
+/*Welche Art von Variablen wo gespeichert wird.
+Warum es wichtig ist, zwischen Stack und Heap zu unterscheiden.
+Welche Rolle Zeiger in diesem Zusammenhang spielen.
+Erstellen Sie eine Skizze des gesamten Arbeitsspeicher.*/
+
+/*Fazit: Speichersegmente in C++
+
+In C++ werden Daten je nach Art in verschiedene Speicherbereiche gelegt:
+
+Globale und statische Variablen liegen im Datensegment.
+Initialisierte Werte kommen ins .data-, nicht initialisierte ins .bss-Segment.
+const-Daten befinden sich im schreibgeschützten Bereich (.rodata).
+
+Lokale Variablen liegen auf dem Stack.
+Er wird automatisch verwaltet und ist sehr schnell.
+Mit static bleibt eine lokale Variable jedoch dauerhaft im Datensegment.
+
+Dynamisch erzeugte Variablen (mittels new) liegen im Heap, der manuell mit delete verwaltet werden muss.
+
+Funktionen liegen im Code-Segment, wo der ausführbare Programmcode gespeichert ist.
+
+Wichtig:
+Stack und Heap unterscheiden sich in Lebensdauer und Verwaltung.
+Zeiger sind notwendig, um auf Speicher im Heap zuzugreifen und machen sichtbar, wo Daten tatsächlich liegen.
+
++------------------------+
+| Code-Segment (Text)    |  → Funktionen, ausführbarer Code
++------------------------+
+| Data-Segment           |  → globale/statische Variablen
+|  - .data (init)        |
+|  - .bss (uninit)       |
+|  - .rodata (const)     |
++------------------------+
+| Heap                   |  → dynamisch angeforderter Speicher (new/delete)
+|         ↑ wächst nach oben
++------------------------+
+| Stack                  |  → lokale Variablen, Funktionsaufrufe
+|         ↓ wächst nach unten
++------------------------+*/
