@@ -81,3 +81,8 @@ auto main(int argc, char** argv) -> int
 
     return 0; /* exit gracefully*/
 }
+/*Aufgabe 1*/
+/*1 Es entsteht ein Zombie-Pointer --> lokale Variable existiert nach Funktionsende nicht mehr (Pointer zeigt ins Nichts)
+2 Undefinde Behavior --> Nur Speicher von malloc() darf mit free() freigegeben werden, sonst führt es zu undefiniertem Verhalten
+3 Stack Overflow --> Jeder Rekursion legt neue Stackframes an (ohne Abbruch füllt sich Stack bis zum Overflow)
+4 Memory Leak --> nicht freigegebener Speicher sammelt sich an*/
