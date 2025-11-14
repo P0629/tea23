@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-// ---------------------------------------------------------
-// Zustände des Garagentors (aus dem Zustandsdiagramm)
-// ---------------------------------------------------------
+// ----------------------------------------
+// Zustände aus dem Zustandsdiagramm
+// ----------------------------------------
 typedef enum
 {
     GARAGENTOR_OFFEN,
@@ -14,39 +14,24 @@ typedef enum
     GARAGENTOR_ZU,
     FAHRE_HOCH,
     STOP_AUFWAERTS
-} GaragentorState;
+} GarageState;
 
-
-// ---------------------------------------------------------
-// Eingänge (Sensoren + Taste)
-//   taste:  1 = gedrückt
-//   oben:   1 = Endschalter oben aktiv
-//   unten:  1 = Endschalter unten aktiv
-// ---------------------------------------------------------
+// ----------------------------------------
+// Eingänge (Taste, Endschalter oben/unten)
+// ----------------------------------------
 typedef struct
 {
-    uint8_t taste;
-    uint8_t oben;
-    uint8_t unten;
-} GaragentorInputs;
+    uint8_t taste;   // 1 = gedrückt
+    uint8_t oben;    // 1 = Endschalter oben aktiv
+    uint8_t unten;   // 1 = Endschalter unten aktiv
+} GarageInputs;
 
+// ----------------------------------------
+// Öffentliche API
+// ----------------------------------------
+void garage_init(void);
+void garage_setInputs(GarageInputs in);
+void garage_update(void);
+GarageState garage_getState(void);
 
-// ---------------------------------------------------------
-// Externe API
-//   -> Wird aus main() aufgerufen
-// ---------------------------------------------------------
-
-// Initialisiert den Automaten (z. B. Tor = offen, Motor = aus)
-void garagentor_init(void);
-
-// Übergibt der State Machine die aktuellen Eingänge
-void garagentor_setInputs(GaragentorInputs in);
-
-// Führt einen Schritt im Zustandsautomaten aus
-void garagentor_update(void);
-
-// (Optional) Ermöglicht, den Zustand von außen abzufragen
-GaragentorState garagentor_getState(void);
-
-
-#endif // GARAGENTOR_H
+#endif
