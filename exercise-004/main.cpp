@@ -3,6 +3,7 @@
 
 #include "CLI/CLI.hpp"
 #include "config.h"
+#include "embedded_image.h"
 
 auto main(int argc, char **argv) -> int
 {
@@ -28,7 +29,8 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", app.get_name());
 
-    /* INSERT YOUR CODE HERE */
+
+
 
 
     return 0; /* exit gracefully*/
