@@ -29,6 +29,7 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", app.get_name());
 
+    fmt::println("Size of the image in bytes: {}", sizeof(image)/sizeof(unsigned char));
 
 
 
