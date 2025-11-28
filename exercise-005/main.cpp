@@ -82,7 +82,35 @@ auto main(int argc, char** argv) -> int
     // Liste freigeben
     FreeList(myList);
 
-   
+// = 4.2 Test des Mini-Vectors                                 =
+    // ============================================================
 
-    return 0; /* exit gracefully*/
+    fmt::println("\n===== Aufgabe 4.2: Vector testen =====");
+
+    Vector_t vec;
+    vector_init(&vec);
+
+    // 5 Werte einfügen
+    vector_push_back(&vec, 10);
+    vector_push_back(&vec, 20);
+    vector_push_back(&vec, 30);
+    vector_push_back(&vec, 40);
+    vector_push_back(&vec, 50);
+
+    // Element an Index 2 ausgeben
+    unsigned int value;
+    if (vector_get(&vec, 2, &value) == 0) {
+        fmt::println("Element an Index 2: {}", value);
+    } else {
+        fmt::println("Fehler beim Zugriff auf Index 2");
+    }
+
+    // Vector ausgeben
+    fmt::print("Inhalt des Vectors: ");
+    vector_print(&vec);
+
+    // Vector freigeben
+    vector_clear(&vec);
+
+    return 0; /* exit gracefully */
 }
