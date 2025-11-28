@@ -81,3 +81,5 @@ Eigenschaften:
 - Bei einem Binary Search Tree (BST) zusätzlich:
 
 left->data  <  node->data  <  right->data
+
+Klausurfrage letztes Jahr: Welche Sonderform der verketteten Liste gibt es? --> Bäume
